@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart TV Control</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Smart TV Control</h1>
+        <p>Model: {{ tv_model }} ({{ screen_size }} inches)</p>
+        
+        <div class="remote-control">
+            <h2>Remote Control</h2>
+            <button onclick="sendCommand('power_on')">Power On</button>
+            <button onclick="sendCommand('power_off')">Power Off</button>
+            <button onclick="sendCommand('volume_up')">Volume Up</button>
+            <button onclick="sendCommand('volume_down')">Volume Down</button>
+            <button onclick="sendCommand('channel_up')">Channel Up</button>
+            <button onclick="sendCommand('channel_down')">Channel Down</button>
+            <button onclick="sendCommand('mute')">Mute</button>
+        </div>
+
+        <div class="apps">
+            <h2>Installed Apps</h2>
+            <ul>
+                {% for app in installed_apps %}
+                <li><button onclick="launchApp('{{ app.name }}')">{{ app.name }}</button></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="channels">
+            <h2>Free Channels</h2>
+            <ul>
+                {% for channel in free_channels %}
+                <li><button onclick="openChannel('{{ channel.name }}')">{{ channel.name }}</button></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="streaming-apps">
+            <h2>Free Streaming Apps</h2>
+            <ul>
+                {% for app in free_streaming_apps %}
+                <li><button onclick="launchApp('{{ app.name }}')">{{ app.name }}</button></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
