@@ -1,0 +1,6 @@
+[
+  {"name": "ABC", "url": "https://abc.com/live"},
+  {"name": "NBC", "url": "https://www.nbc.com/live"},
+  {"name": "CBS", "url": "https://www.cbs.com/live/"},
+  {"name": "FOX", "url": "https://www.fox.com/live/"}
+]
