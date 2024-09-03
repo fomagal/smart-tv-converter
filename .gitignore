@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Configuration files
+config/smart_tv_config.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
